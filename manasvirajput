@@ -1,0 +1,60 @@
+#include <iostream>
+
+using namespace std;
+    
+
+
+   class complexnum{
+    int real,imaginary;
+    public:
+    complexnum()
+    {real=0,imaginary=0;}
+    complexnum(int x,int y){
+        real=x; imaginary=y;
+    }
+    
+    void read();
+    void display();
+    complexnum conjcomplex();
+       
+   };
+void complexnum::read()
+{
+    cout<<"\n enter real part";
+    cin>>real;
+    cout<<"\n enter imaginary part";
+    cin>>imaginary;
+    
+}
+void complexnum::display()
+{
+    if(imaginary<0)
+    cout<<real<<imaginary<<"i";
+    else
+    cout<<real<<"+"<<imaginary<<"i";
+}
+  complexnum::conjcomplex(complexnum c2){
+          complexnum c3;
+          c3.real=c2.real;
+          c3.imaginary=-c2.imaginary;
+          return c3;
+      }
+
+int main()
+{
+   complexnum c1,c2;
+    c1.display();
+    c1.read();
+    c1.display();
+    
+    cout<<"\n";
+    c2.read();
+    c2.display();
+    
+    cout<<"\n";
+    complexnum c3;
+    
+    c3=c1.conjcomplex(c2);
+    c3.display();
+    return 0;
+}
